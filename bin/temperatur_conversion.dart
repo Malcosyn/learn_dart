@@ -1,10 +1,18 @@
 import 'dart:io';
 
 void temperaturConversion() {
-  stdout.write('Input fahrenheit: ');
-  var fahrenheit = num.parse(stdin.readLineSync()!);
+  try{
+    stdout.write('Input fahrenheit: ');
+    var fahrenheit = num.parse(stdin.readLineSync()!);
 
-  print('$fahrenheit fahrenheit is ${conversion(fahrenheit).toStringAsFixed(2)} Celsius');
+    print('$fahrenheit fahrenheit is ${conversion(fahrenheit).toStringAsFixed(2)} Celsius');
+  } catch (e){
+    print(e);
+    print("make sure your input number");
+  }
+
+
+
 }
 
 double conversion(num temp){
